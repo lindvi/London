@@ -15,11 +15,11 @@
   <div class="item {{if done}}done{{/if}}">
     <div class="view" title="Double click to edit...">
       <input type="checkbox" {{if done}}checked="checked"{{/if}}> 
-      <span>${name}</span> <a class="destroy"></a>
+      <span>${name} <br><span class="small">Long: ${longitude} Lat: ${latitude}</span> <a href=""></a></span>
     </div>
   </div>
 </script>
-  
+
 </head>
 <body>
 <div id="views">
@@ -27,7 +27,8 @@
     <h1>Todos</h1>
 
     <form>
-      <input type="text" placeholder="What needs to be done?">
+      <input type="text" placeholder="Name">
+      
     </form>
 
 
