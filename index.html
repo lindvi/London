@@ -4,6 +4,10 @@
   <title>Todos</title>
   
   <link rel="stylesheet" href="css/application.css" type="text/css" charset="utf-8">
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+ <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+ <![endif]-->
 
   <script src="lib/json2.js" type="text/javascript" charset="utf-8"></script>
   <script src="lib/jquery.js" type="text/javascript" charset="utf-8"></script>
@@ -12,6 +16,9 @@
   <script src="lib/spine.js" type="text/javascript" charset="utf-8"></script>
   <script src="lib/local.js" type="text/javascript" charset="utf-8"></script>
   <script src="lib/application.js" type="text/javascript" charset="utf-8"></script>
+
+ <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
   
   <script type="text/x-jquery-tmpl" id="taskTemplate">
     <div class="item {{if done}}done{{/if}}">
@@ -42,6 +49,9 @@
         <div class="count"><span class="countVal"></span> left</div>
       </footer>
     </div>
-  </div>
+  </div>'
+
+  <div id="map" style="height: 180px"></div>
+
 </body>
 </html>
