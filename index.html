@@ -3,7 +3,7 @@
 <head>
   <title>Todos</title>
   <link rel="stylesheet" href="css/application.css" type="text/css" charset="utf-8">
-   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
  <!--[if lte IE 8]>
      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
  <![endif]-->
@@ -29,7 +29,11 @@
 </head>
 <body>
 <div id="views">
-  <div id="map" style="height: 400px"></div>
+  <div id="map" style="height: 400px">
+    <input type="hidden" id="latitude" value="" />
+    <input type="hidden" id="longitude" value="" />
+    
+  </div>
   <div id="tasks">
     <h1>Todos</h1>
 
@@ -63,10 +67,14 @@
   var popup = L.popup();
 
   function onMapClick(e) {
-    popup
-      .setLatLng(e.latlng)
-      .setContent("You clicked the map at " + e.latlng.toString())
-      .openOn(map);
+        // popup
+        // .setLatLng(e.latlng)
+        // .setContent("<form><input type='text' placeholder='What needs to be done?'></form>")
+        // .openOn(map);
+    //var newMarker = new L.marker(e.latlng).addTo(map);
+    document.getElementById('latitude').value = e.latlng.lat;
+    document.getElementById('longitude').value = e.latlng.lng;
+
   }
 
   map.on('click', onMapClick);
