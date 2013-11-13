@@ -45,6 +45,8 @@ class TaskApp extends Spine.Controller
     e.preventDefault()
     location = Task.fromForm(e.target)
     location.save()
+    @input.val("")
+
 
   clear: ->
     Task.destroyDone()

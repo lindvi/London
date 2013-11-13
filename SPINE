@@ -1,0 +1,33 @@
+* Coffeescript > Vanilla JS
+* Omständigt
+	* OSX
+		- XCode
+		- Developer commandline tools
+		- Install brew (ruby + curl)
+		- Install npm (brew install)
+		- Install coffee-script (npm install)
+	* Windows
+		- Dont
+
+* Exempel
+
+	class Contact extends Spine.Model
+  		@configure "Contact", "first_name", "last_name"
+
+	firstItem = Item.first()
+	lastItem = Item.last()
+
+* Templating
+	- jQuery
+	- Eco (Missade!)
+		- Coffeescript templates, påminner om .erb
+
+		<% if @projects.length: %>
+		  <% for project in @projects: %>
+		    <a href="<%= project.url %>"><%= project.name %></a>
+		    <p><%= project.description %></p>
+		  <% end %>
+		<% else: %>
+		  No projects
+		<% end %>
+

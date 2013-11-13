@@ -21,7 +21,7 @@
   <div class="item {{if done}}done{{/if}}">
     <div class="view" title="Double click to edit...">
       <input type="checkbox" {{if done}}checked="checked"{{/if}}> 
-      <span>${name} <br><span class="small">Ln: ${lon} Lat: ${lat}</span><a class="destroy"></a></span>
+      <span>${name} <br><span class="small">Ln: ${lon} Lat: ${lat}</span></span>
     </div>
   </div>
 </script>
@@ -42,12 +42,11 @@
 
     <div class="items"></div>
 
-    <footer>
-      <a class="clear">Clear completed</a>
-      <div class="count"><span class="countVal"></span> left</div>
+    <footer style="height:20px">
     </footer>
   </div>
 </div>
+
 
 
 <script>
@@ -57,9 +56,10 @@
     maxZoom: 18,
   }).addTo(map);
 
-
-  L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+  var locations = JSON.parse(localStorage.getItem("Task"));
+  for(var i = 0; i < locations.length; i++){
+    new L.marker([locations[i].lat, locations[i].lon]).addTo(map);
+  }
 
   var popup = L.popup();
 
